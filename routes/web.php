@@ -13,9 +13,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+
+Auth::routes([
+    'register' => false, // Registration Routes...
+    'reset' => false, // Password Reset Routes...
+    'verify' => false, // Email Verification Routes...
+  ]);
+  Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
+Route::group(['middleware' => ['auth']], function () {
+Route::post('tien-thu', [App\Http\Controllers\MainController::class, 'tienthu'])->name('tienthu');
+
 });
-Route::get('admin', function () {
-    return view('admin.dashboard');
-});
+
+
+
