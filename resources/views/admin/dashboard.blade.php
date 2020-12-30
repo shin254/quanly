@@ -92,6 +92,61 @@
         </div><!-- /.container-fluid -->
       </section>
 
+      <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+              <!-- general form elements -->
+              <div class="card card-primary">
+                <div class="card-header">
+                  <h3 class="card-title">Thêm vào lịch sử</h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form id="form_validation" method="POST" action="" enctype="multipart/form-data" >
+                  {{csrf_field()}}
+                  <div class="card-body">
+                    <div class="form-group row">
+                          <div class="col-md-12">
+                              <div class="form-group col-md-12">
+                                <label for="">Tên</label>
+                                <input type="text" name="ten" class="form-control" id="" placeholder="">
+                              </div>
+                              <div class="form-group col-md-12">
+                                <label for="">Số tiền</label>
+                                <input type="text" name="price" class="form-control" id="" placeholder="">
+                              </div>
+                              <div class="form-group col-md-12">
+                                <label for="">Ghi chú</label>
+                                <input type="text" name="ghi_chu" class="form-control" id="" placeholder="">
+                              </div>
+                              
+                              <input type="hidden" name="nhan_tien" class="form-control" id="" placeholder="">
+                              <input type="hidden" name="chi_tieu" class="form-control" id="" placeholder="">
+                              <input type="hidden" name="cho_muon_tien" class="form-control" id="" placeholder="">
+                              
+
+                              
+                          </div> 
+                    </div>
+                  </div>
+                  <!-- /.card-body -->
+
+                  <div class="card-footer">
+                    <input type="button" name="nhan_tien" class="btn btn-success" value="Nhận Tiền">
+                    <input type="button" name="chi_tieu" class="btn btn-info" value="Chi Tiêu">
+                    <input type="button" name="cho_muon" class="btn btn-danger" value="Cho Mượn">
+                  </div>
+                </form>
+              </div>
+              <!-- /.card -->
+            </div>
+            <!--/.col (left) -->
+          </div>
+          <!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </section>
   </div>
   <!-- /.content-wrapper -->
 @endsection
