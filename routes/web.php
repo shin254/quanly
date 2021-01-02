@@ -30,6 +30,10 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('in
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 Route::group(['middleware' => ['auth']], function () {
 Route::post('tien-thu', [App\Http\Controllers\MainController::class, 'tienthu'])->name('tienthu');
+Route::post('tien-chi', [App\Http\Controllers\MainController::class, 'tienchi'])->name('tienchi');
+Route::post('tien-cho-muon', [App\Http\Controllers\MainController::class, 'tienchomuon'])->name('tienchomuon');
+
+
 
 });
 
