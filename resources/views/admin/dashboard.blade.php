@@ -104,7 +104,7 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form id="form_validation" method="POST" action="" enctype="multipart/form-data" >
+                <form id="form_validation" method="POST" action="{{route('tienthu')}}" >
                   {{csrf_field()}}
                   <div class="card-body">
                     <div class="form-group row">
@@ -134,7 +134,7 @@
                   <!-- /.card-body -->
 
                   <div class="card-footer">
-                    <input type="button" name="nhan_tien" class="btn btn-success" value="Nhận Tiền">
+                    <input  type="submit" name="nhan_tien" class="btn btn-success" value="Nhận Tiền">
                     <input type="button" name="chi_tieu" class="btn btn-info" value="Chi Tiêu">
                     <input type="button" name="cho_muon" class="btn btn-danger" value="Cho Mượn">
                   </div>

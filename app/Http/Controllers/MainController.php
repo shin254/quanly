@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\ChiTieu;
+use App\Models\ChiTieu;
+use DB;
 
 class MainController extends Controller
 {
@@ -16,10 +17,8 @@ class MainController extends Controller
                 'loai_tien' => '2',
                 'ghi_chu' => $request->get('ghi_chu'),
             ]);
-            $tongthu = DB::table('chi_tieu')
-            ->select(DB::raw('count(*) as tien_thu, loai_tien'))
-            ->where('loai_tien',  2)
-            ->groupBy('loai_tien')
+            $tongthu = DB::table('chitieu')
+            ->select(DB::raw("SUM(tien_thu) as tongthu"))->where('loai_tien', '2')
             ->get();
             dd($tongthu);
             DB::update('update chitieu set tien_du = 100 where name = ?');
